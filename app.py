@@ -70,7 +70,7 @@ st.markdown("""
         }
     }
 </style>
-""", unsafe_html=True)
+""", unsafe_allow_html=True)
 
 # Initialize Session State
 if "step" not in st.session_state:
@@ -182,14 +182,14 @@ st.markdown(f"""
         <span>{progress_percentage}% Complete</span>
     </div>
 </div>
-""", unsafe_html=True)
+""", unsafe_allow_html=True)
 st.progress(progress_percentage / 100.0)
 
-st.markdown('<div class="saas-card">', unsafe_html=True)
+st.markdown('<div class="saas-card">', unsafe_allow_html=True)
 
 if st.session_state.step == 1:
-    st.markdown('<div class="question-title">Step 1: Age</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">How old are you?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 1: Age</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">How old are you?</div>', unsafe_allow_html=True)
     
     age = st.number_input(
         "Age (years)",
@@ -205,8 +205,8 @@ if st.session_state.step == 1:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 2:
-    st.markdown('<div class="question-title">Step 2: Gender</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">What is your gender?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 2: Gender</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">What is your gender?</div>', unsafe_allow_html=True)
     
     gender = st.selectbox(
         "Gender",
@@ -222,8 +222,8 @@ elif st.session_state.step == 2:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 3:
-    st.markdown('<div class="question-title">Step 3: Height & Weight</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">We will use this to automatically determine your body ratio.</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 3: Height & Weight</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">We will use this to automatically determine your body ratio.</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my height and weight", value=st.session_state.bmi_known)
     st.session_state.bmi_known = known
@@ -255,8 +255,8 @@ elif st.session_state.step == 3:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 4:
-    st.markdown('<div class="question-title">Step 4: Daily Steps</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">On average, how many steps do you walk in a single day?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 4: Daily Steps</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">On average, how many steps do you walk in a single day?</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my average daily steps", value=st.session_state.steps_known)
     st.session_state.steps_known = known
@@ -281,8 +281,8 @@ elif st.session_state.step == 4:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 5:
-    st.markdown('<div class="question-title">Step 5: Hours of Sleep</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">How many hours of sleep do you typically get per night?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 5: Hours of Sleep</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">How many hours of sleep do you typically get per night?</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my average sleep hours", value=st.session_state.sleep_known)
     st.session_state.sleep_known = known
@@ -307,8 +307,8 @@ elif st.session_state.step == 5:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 6:
-    st.markdown('<div class="question-title">Step 6: Daily Water Intake</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">How many liters of water do you drink daily?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 6: Daily Water Intake</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">How many liters of water do you drink daily?</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my average daily water intake", value=st.session_state.water_known)
     st.session_state.water_known = known
@@ -333,8 +333,8 @@ elif st.session_state.step == 6:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 7:
-    st.markdown('<div class="question-title">Step 7: Daily Calories Consumed</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">What is your typical daily calorie consumption?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 7: Daily Calories Consumed</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">What is your typical daily calorie consumption?</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my calorie consumption", value=st.session_state.calories_known)
     st.session_state.calories_known = known
@@ -359,8 +359,8 @@ elif st.session_state.step == 7:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 8:
-    st.markdown('<div class="question-title">Step 8: Smoking Habit</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">Do you smoke cigarettes/tobacco?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 8: Smoking Habit</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">Do you smoke cigarettes/tobacco?</div>', unsafe_allow_html=True)
     
     smoker = st.selectbox(
         "Do you smoke?",
@@ -376,8 +376,8 @@ elif st.session_state.step == 8:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 9:
-    st.markdown('<div class="question-title">Step 9: Alcohol Habit</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">Do you regularly consume alcohol?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 9: Alcohol Habit</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">Do you regularly consume alcohol?</div>', unsafe_allow_html=True)
     
     alcohol = st.selectbox(
         "Do you drink alcohol?",
@@ -393,8 +393,8 @@ elif st.session_state.step == 9:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 10:
-    st.markdown('<div class="question-title">Step 10: Resting Heart Rate</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">Do you know your typical resting heart rate (in beats per minute)?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 10: Resting Heart Rate</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">Do you know your typical resting heart rate (in beats per minute)?</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my resting heart rate", value=st.session_state.hr_known)
     st.session_state.hr_known = known
@@ -419,8 +419,8 @@ elif st.session_state.step == 10:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 11:
-    st.markdown('<div class="question-title">Step 11: Blood Pressure</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">Do you know your typical resting blood pressure reading?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 11: Blood Pressure</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">Do you know your typical resting blood pressure reading?</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my blood pressure numbers", value=st.session_state.bp_known)
     st.session_state.bp_known = known
@@ -454,8 +454,8 @@ elif st.session_state.step == 11:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 12:
-    st.markdown('<div class="question-title">Step 12: Cholesterol level</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">Do you know your blood cholesterol level (in mg/dL)?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 12: Cholesterol level</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">Do you know your blood cholesterol level (in mg/dL)?</div>', unsafe_allow_html=True)
     
     known = st.checkbox("I know my cholesterol number", value=st.session_state.chol_known)
     st.session_state.chol_known = known
@@ -480,8 +480,8 @@ elif st.session_state.step == 12:
         st.button("Next Question →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 13:
-    st.markdown('<div class="question-title">Step 13: Family History</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">Is there a history of chronic illnesses or heart diseases in your close family?</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Step 13: Family History</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">Is there a history of chronic illnesses or heart diseases in your close family?</div>', unsafe_allow_html=True)
     
     history = st.selectbox(
         "Family History of Illness",
@@ -497,8 +497,8 @@ elif st.session_state.step == 13:
         st.button("Review Summary →", on_click=next_step, type="primary")
 
 elif st.session_state.step == 14:
-    st.markdown('<div class="question-title">Review Health Summary</div>', unsafe_html=True)
-    st.markdown('<div class="question-desc">Verify your lifestyle parameters before submitting for risk assessment.</div>', unsafe_html=True)
+    st.markdown('<div class="question-title">Review Health Summary</div>', unsafe_allow_html=True)
+    st.markdown('<div class="question-desc">Verify your lifestyle parameters before submitting for risk assessment.</div>', unsafe_allow_html=True)
     
     # Calculate BMI representation
     bmi_val = utils.calculate_bmi(st.session_state.height, st.session_state.weight) if st.session_state.bmi_known else utils.DEFAULTS['bmi']
@@ -526,7 +526,7 @@ elif st.session_state.step == 14:
     | **Blood Pressure** | {show_bp} |
     | **Total Cholesterol** | {show_chol} |
     | **Family History** | {st.session_state.family_history} |
-    """, unsafe_html=True)
+    """, unsafe_allow_html=True)
     
     st.write("")
     
@@ -573,7 +573,7 @@ elif st.session_state.step == 14:
                         ⚠️ DISCLAIMER: This is a lifestyle self-assessment prototype. It does not replace professional medical diagnosis.
                     </div>
                 </div>
-                """, unsafe_html=True)
+                """, unsafe_allow_html=True)
             else:
                 st.markdown(f"""
                 <div style="background: rgba(239, 68, 68, 0.1); border-left: 5px solid #EF4444; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
@@ -589,7 +589,7 @@ elif st.session_state.step == 14:
                         ⚠️ DISCLAIMER: This is a lifestyle self-assessment prototype. It does not replace professional medical diagnosis.
                     </div>
                 </div>
-                """, unsafe_html=True)
+                """, unsafe_allow_html=True)
             st.balloons()
         except Exception as e:
             st.error(f"Prediction failed: {e}")
@@ -597,4 +597,4 @@ elif st.session_state.step == 14:
     st.write("")
     st.button("🔄 Restart Assessment", on_click=reset_wizard)
 
-st.markdown('</div>', unsafe_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
